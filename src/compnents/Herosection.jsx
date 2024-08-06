@@ -2,6 +2,7 @@
 import React from 'react'
 import Icon from './Icon';
 import { Button } from '@material-tailwind/react';
+
 function Herosection() {
   const bgClass = `bg-[var(--theme-color)]`;
   return (
