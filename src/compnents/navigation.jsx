@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import {
   Navbar,
@@ -19,15 +18,13 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import {
-  
   SquaresPlusIcon,
- 
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
- 
+
 const navListMenuItems = [
   {
-    title: "Projects",
+    title: "Products",
     description: "Find the perfect solution for your needs.",
     icon: SquaresPlusIcon,
   },
@@ -36,8 +33,13 @@ const navListMenuItems = [
     description: "Meet and learn about our dedication",
     icon: UserGroupIcon,
   },
+  {
+    title: "About Us",
+    description: "Meet and learn about our dedication",
+    icon: UserGroupIcon,
+  },
 ];
- 
+
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -46,7 +48,6 @@ function NavListMenu() {
       <a href="#" key={key}>
         <MenuItem className="flex items-center gap-3 rounded-lg">
           <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
-            {" "}
             {React.createElement(icon, {
               strokeWidth: 2,
               className: "h-6 text-gray-900 w-6",
@@ -69,9 +70,9 @@ function NavListMenu() {
           </div>
         </MenuItem>
       </a>
-    ),
+    )
   );
- 
+
   return (
     <React.Fragment>
       <Menu
@@ -84,11 +85,11 @@ function NavListMenu() {
         <MenuHandler>
           <Typography as="div" variant="small" className="font-medium">
             <ListItem
-              className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
+              className="flex items-center gap-2 py-2 pr-4  text-gray-900 font-semibold"
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
-              Menu
+              Resources
               <ChevronDownIcon
                 strokeWidth={2.5}
                 className={`hidden h-3 w-3 transition-transform lg:block ${
@@ -116,7 +117,7 @@ function NavListMenu() {
     </React.Fragment>
   );
 }
- 
+
 function NavList() {
   return (
     <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
@@ -127,7 +128,7 @@ function NavList() {
         color="blue-gray"
         className="font-medium"
       >
-        <ListItem className="flex items-center gap-2 py-2 pr-4">Home</ListItem>
+        <ListItem className="flex items-center gap-2 py-2 pr-4 font-semibold">Home</ListItem>
       </Typography>
       <NavListMenu />
       <Typography
@@ -137,26 +138,29 @@ function NavList() {
         color="blue-gray"
         className="font-medium"
       >
-        <ListItem className="flex items-center gap-2 py-2 pr-4">
+        <ListItem className="flex items-center gap-2 py-2 pr-4 font-semibold ">
           Contact Us
         </ListItem>
       </Typography>
     </List>
   );
 }
- 
-export default function navigation() {
+
+export default function Navigation() {
   const [openNav, setOpenNav] = React.useState(false);
- 
+
   React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false),
-    );
+    const handleResize = () => {
+      if (window.innerWidth >= 960) {
+        setOpenNav(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
- 
+
   return (
-    <Navbar className="mx-auto max-w-screen-xl px-4 py-2">
+    <Navbar className="min-w-full    px-4 py-2">
       <div className="flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
@@ -169,7 +173,14 @@ export default function navigation() {
         <div className="hidden lg:block">
           <NavList />
         </div>
-       
+        <div className="hidden gap-2 lg:flex">
+          <Button variant="text" size="sm" color="blue-gray">
+            Log In
+          </Button>
+          <Button variant="gradient" size="sm">
+            Sign In
+          </Button>
+        </div>
         <IconButton
           variant="text"
           color="blue-gray"
@@ -185,7 +196,14 @@ export default function navigation() {
       </div>
       <Collapse open={openNav}>
         <NavList />
-       
+        <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
+          <Button variant="outlined" size="sm" color="blue-gray" fullWidth>
+            Log In
+          </Button>
+          <Button variant="gradient" size="sm" fullWidth>
+            Sign In
+          </Button>
+        </div>
       </Collapse>
     </Navbar>
   );
