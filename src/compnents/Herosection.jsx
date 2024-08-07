@@ -10,7 +10,7 @@ function Herosection() {
       <div className={`flex justify-between sm:px-5 md:px-[100px] xl:px-[300px] xl:justify-around ${bgClass}  h-[100vh] pt-[100px] `}>
         <div className='flex flex-col   p-5 w-[500px]'>
           <span className='text-2xl font-extrabold text-teal-200 '>Hi </span>
-          <span className='text-2xl font-extrabold text-light-blue-200 pt-3'> I'M </span>
+          <span className='text-2xl font-extrabold text-light-blue-200 pt-3'>I&apos;M </span>
           <span className='text-2xl font-extrabold text-cyan-200 pt-3'>Ubaid  Ahmed</span>
           <span className='text-2xl font-serif  text-teal-200 pt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi repellat at nam provident ipsum consectetur voluptas odit. Id excepturi quas ipsa corrupti quae expedita ratione accusantium magnam exercitationem aliquam. Ipsum. </span>
           <Icon />

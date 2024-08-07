@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ProjectCard } from "./ProjectCard";
-
+import './Styles.css'
 function AutoPlay() {
   const settings = {
     dots: false,
@@ -14,13 +14,13 @@ function AutoPlay() {
     speed: 2000,
     autoplaySpeed: 2000,
     cssEase: "linear",
+    
   };
   const bgClass = `bg-[var(--theme-color)]`;
 
   return (
     <div className={`slider-container ${bgClass} p-5 px-4 gap-3`}>
       <Slider {...settings} className="">
-        {/* <div></div> */}
         <div className=" ml-3">
           <ProjectCard/>
         </div>
