@@ -9,6 +9,7 @@ import {  Cardlink } from '@/compnents/Card';
 import ScrollxSection from '@/compnents/ScrollScreen';
 import {ProjectCard} from '@/compnents/ProjectCard';
 import TextCard from '@/compnents/TextCard';
+import About from '@/compnents/About';
 
 
 export default function Home() {
@@ -46,9 +47,9 @@ export default function Home() {
         <Navigation />
         <Herosection />
 
-        <ProjectCard/>
+        <About/>
         <ScrollxSection/>
-        {/* <TextCard/> */}
+        <TextCard/>
         <div
           ref={boxRef}
           style={{

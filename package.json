@@ -11,6 +11,7 @@
   "dependencies": {
     "@heroicons/react": "^2.1.5",
     "@material-tailwind/react": "^2.1.9",
+    "framer-motion": "^11.3.22",
     "gsap": "^3.12.5",
     "next": "14.2.5",
     "react": "^18",

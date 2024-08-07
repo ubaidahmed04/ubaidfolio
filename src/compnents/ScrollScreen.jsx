@@ -19,21 +19,22 @@ function AutoPlay() {
   const bgClass = `bg-[var(--theme-color)]`;
 
   return (
-    <div className={`slider-container ${bgClass} p-5 px-4 gap-3`}>
-      <Slider {...settings} className="">
-        <div className=" ml-3">
+    <div className={`slider-container ${bgClass} py-5 px-4  `}>
+      <span className="text-2xl font-bold text-teal-200 my-3">Projects</span>
+      <Slider {...settings} className=" gap-3 ">
+        <div className="   px-3">
           <ProjectCard/>
         </div>
-        <div className="  ml-3">
+        <div className="  px-3">
         <ProjectCard/>
         </div>
-        <div className="  ml-8">
+        <div className="  px-3">
         <ProjectCard/>
         </div>
-        <div className="  ml-8">
+        <div className="  px-3">
         <ProjectCard/>
         </div>
-        <div className="  ml-8">
+        <div className="  px-3">
         <ProjectCard/>
         </div>
       

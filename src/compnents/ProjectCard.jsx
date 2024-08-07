@@ -9,6 +9,8 @@ import {
 
 // ProjectCard component
 export function ProjectCard() {
+  const bgClass = `bg-[var(--theme-color)]`;
+
   return (
     <Card className="w-full h-[400px]  max-w-[48rem] flex-shrink-0 flex-row">
       <CardHeader
@@ -22,22 +24,22 @@ export function ProjectCard() {
           className="h-full w-full object-cover"
         />
       </CardHeader>
-      <CardBody className="bg-[#373737] text-cyan-200">
+      <CardBody className={`bg-[#373737] hover:bg-[#607D8B] cursor-pointer text-cyan-200`}>
         <Typography variant="h6" className="mb-4 uppercase">
-          startups
+          Project
         </Typography>
         <Typography variant="h4" className="mb-2">
-          Lyft launching cross-platform service this week
+          E-Commerce
         </Typography>
-        <Typography className="mb-8 font-normal">
+        <Typography className="mb-8 font-normal  ">
           Like so many organizations these days, Autodesk is a company in
           transition. It was until recently a traditional boxed software company
           selling licenses. Yet its own business model disruption is only part
           of the story
         </Typography>
         <a href="#" className="inline-block">
-          <Button variant="text" className="flex items-center gap-2 text-teal-200">
-            Learn More
+          <Button variant="text" className="flex hover:shadow-[#7DC5BE] items-center gap-2 text-md text-teal-200">
+            Explore
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
